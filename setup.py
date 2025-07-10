@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 # we go dumm
 setup(
-    name="rune",
-    version="0.1.0",
+    name="lane",
+    version="0.2.0",
     description="embed scripting engine by Infrared LLC.",
     author="infrared",
     author_email="faneorg.official@gmail.com",
     packages=find_packages(),
     include_package_data=True,
-    url="https://github.com/infraredhuh/rune",
+    url="https://github.com/infraredhuh/lane",
     package_data={"rune": ["py.typed"]},
     install_requires=[
         "discord.py",
