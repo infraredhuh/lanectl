@@ -1,3 +1,3 @@
-from .engine import Glyph
+from .engine import Rune
 
-__all__ = ('Glyph')
+__all__ = ('Rune')
