@@ -1,6 +1,6 @@
 # 🧱 lane
 
-**land** is the embed scripting engine for infrared.
+**lane** is the embed scripting engine for infrared.
 
 It parses a block of text, replaces variables, and turns it into an embed with an optional `discord.ui.View`.  
 No GUI. No builder. Just script → message.
