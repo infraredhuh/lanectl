@@ -62,7 +62,7 @@ class Lane:
         embed = discord.Embed(
             title=self.title,
             description=self.description,
-            color=self.color or 0x2F3136,
+            color=self.color or 0x020000,
             timestamp=self.timestamp,
         )
 
