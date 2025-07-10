@@ -6,7 +6,7 @@ from .blocks import AuthorBlock, FieldBlock, FooterBlock, ButtonBlock
 from .inject import inject_vars
 from .utils import extract_blocks
 
-class Glyph:
+class Rune:
     def __init__(self, script: str, member: discord.Member, target: Optional[discord.Member] = None):
         self.member = member
         self.target = target or member
