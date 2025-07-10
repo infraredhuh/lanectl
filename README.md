@@ -17,7 +17,7 @@ No GUI. No builder. Just script → message.
 {author:Pusha && https://i.imgur.com/pusha.png}
 {field:Rank && King && inline}
 {footer:real bars only && https://i.imgur.com/footer.png}
-{button:enter && 🚪 && https://infrared.zone && red}
+{button:enter && 🚪 && https://infrared.something && red}
 {timestamp}
 ```
 
@@ -89,17 +89,9 @@ rune/
 ## ⚙️ Install
 
 ```bash
-pip install -e .
+pip install rune
 ```
 
-Or just copy the `rune/` folder into your project.
+Or just copy the `rune/` folder into your project, i dont really care.
 
 ---
-
-## ✸
-
-You write the script.  
-**rune** formats it.
-
-No templates. No GUI.  
-Just simplicity.
