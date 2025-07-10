@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 # we go dumm
 setup(
     name="lanectl",
-    version="0.3.0",
+    version="0.4.0",
     description="embed scripting engine by Infrared LLC.",
     author="infrared",
     author_email="faneorg.official@gmail.com",
     packages=find_packages(),
     include_package_data=True,
     url="https://github.com/infraredhuh/lanectl",
-    package_data={"rune": ["py.typed"]},
+    package_data={"lanectl": ["py.typed"]},
     install_requires=[
         "discord.py",
     ],
