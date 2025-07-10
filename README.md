@@ -59,8 +59,8 @@ Variables are replaced in any field.
 from lane import Lane
 
 @bot.command()
-async def rune(ctx, *, script: str):
-    r = Rune(script, ctx.author)
+async def createembed(ctx, *, script: str):
+    r = Lane(script, ctx.author)
 
     await ctx.send(
         content=r.content,
