@@ -6,61 +6,55 @@
   <title>rune</title>
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      line-height: 1.6;
-      max-width: 720px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
       margin: 2rem auto;
-      padding: 0 1rem;
-      color: #ddd;
-      background: #0f0f0f;
+      padding: 0 1.5rem;
+      background: #fff;
+      color: #24292f;
     }
     h1, h2, h3 {
-      color: #fff;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 0.3em;
+      margin-top: 2em;
     }
-    code {
-      background: #1a1a1a;
+    pre, code {
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+      background-color: #f6f8fa;
       padding: 0.2em 0.4em;
-      border-radius: 4px;
-      color: #f94f4f;
-      font-family: monospace;
+      border-radius: 6px;
     }
     pre {
-      background: #1a1a1a;
       padding: 1em;
-      border-radius: 6px;
       overflow-x: auto;
     }
     table {
-      width: 100%;
       border-collapse: collapse;
-      margin: 1em 0;
-      font-size: 0.95em;
+      width: 100%;
+      margin-top: 1em;
     }
     th, td {
-      padding: 0.5em;
-      border: 1px solid #444;
+      border: 1px solid #d0d7de;
+      padding: 6px 13px;
     }
     th {
-      background: #222;
-      color: #ccc;
+      background-color: #f6f8fa;
       text-align: left;
     }
     a {
-      color: #f94f4f;
+      color: #0969da;
       text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<h1>rune</h1>
+<h1>🧱 rune</h1>
 <p><strong>rune</strong> is a message scripting engine for Discord bots.</p>
-<p>It parses a block of text, replaces variables, and turns it into an embed with optional buttons. No GUI. No builder. Just script → message.</p>
+<p>It parses a block of text, replaces variables, and turns it into an embed with optional buttons.<br>
+No GUI. No builder. Just script → message.</p>
 
-<h2>Example</h2>
+<h2>▶ Example</h2>
 <pre><code>{content:welcome, {user.name}}
 {title:infrared online}
 {description:this server runs cold}
@@ -71,8 +65,9 @@
 {button:enter && 🚪 && https://infrared.zone && red}
 {timestamp}</code></pre>
 
-<h2>Supported Fields</h2>
-<p>All optional. Any invalid/missing ones are ignored.</p>
+<h2>✅ Supported Fields</h2>
+<p>All fields are optional. Missing or invalid values are ignored.</p>
+
 <table>
   <thead>
     <tr>
@@ -81,25 +76,26 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>content</td><td><code>{content:text}</code></td></tr>
-    <tr><td>title</td><td><code>{title:text}</code></td></tr>
-    <tr><td>description</td><td><code>{description:text}</code></td></tr>
-    <tr><td>color</td><td><code>{color:#hex}</code></td></tr>
-    <tr><td>author</td><td><code>{author:Name && Icon && URL}</code></td></tr>
-    <tr><td>footer</td><td><code>{footer:Text && Icon}</code></td></tr>
-    <tr><td>field</td><td><code>{field:Name && Value && inline}</code></td></tr>
-    <tr><td>button</td><td><code>{button:Label && Emoji && URL && Style}</code></td></tr>
-    <tr><td>timestamp</td><td><code>{timestamp}</code></td></tr>
+    <tr><td><code>content</code></td><td><code>{content:text}</code></td></tr>
+    <tr><td><code>title</code></td><td><code>{title:text}</code></td></tr>
+    <tr><td><code>description</code></td><td><code>{description:text}</code></td></tr>
+    <tr><td><code>color</code></td><td><code>{color:#hex}</code></td></tr>
+    <tr><td><code>author</code></td><td><code>{author:Name && Icon && URL}</code></td></tr>
+    <tr><td><code>footer</code></td><td><code>{footer:Text && Icon}</code></td></tr>
+    <tr><td><code>field</code></td><td><code>{field:Name && Value && inline}</code></td></tr>
+    <tr><td><code>button</code></td><td><code>{button:Label && Emoji && URL && Style}</code></td></tr>
+    <tr><td><code>timestamp</code></td><td><code>{timestamp}</code></td></tr>
   </tbody>
 </table>
 
-<h2>Available Variables</h2>
-<p>Any string can use these placeholders:</p>
-<pre><code>{user.name}         {user.id}          {user.avatar}
-{guild.name}        {guild.id}         {guild.owner}
-{target.name}       {target.id}        ...</code></pre>
+<h2>🔀 Variables</h2>
+<p>Variables are replaced in any field:</p>
+<pre><code>{user.name}       {user.id}         {user.avatar}
+{guild.name}      {guild.id}         {guild.owner}
+{target.name}     {target.id}        {target.avatar}
+...</code></pre>
 
-<h2>Bot Usage</h2>
+<h2>🧪 Bot Usage</h2>
 <pre><code>from rune import Rune
 
 @bot.command()
@@ -112,22 +108,22 @@ async def rune(ctx, *, script: str):
         view=r.view()
     )</code></pre>
 
-<p>If the script defines nothing, everything returns <code>None</code>. No checks needed.</p>
+<p>If the script defines nothing, <code>r.content</code>, <code>r.render()</code>, and <code>r.view()</code> all return <code>None</code>.</p>
 
-<h2>Structure</h2>
+<h2>📁 Structure</h2>
 <pre><code>rune/
 ├── engine.py     # core logic
 ├── blocks.py     # components
-├── inject.py     # var replacement
-├── utils.py      # text helpers
+├── inject.py     # variable replacement
+├── utils.py      # helpers
 ├── __init__.py   # exports Rune
 </code></pre>
 
-<h2>Install</h2>
+<h2>⚙️ Install</h2>
 <pre><code>pip install -e .</code></pre>
-<p>Or just copy the <code>rune/</code> folder.</p>
+<p>Or just copy the <code>rune/</code> folder into your bot project.</p>
 
-<h2 style="margin-top: 2em;">✸</h2>
+<h2>✸</h2>
 <p>You write the script. <code>rune</code> formats it.</p>
 <p>No templates. No editors. Just bars.</p>
 
