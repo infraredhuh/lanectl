@@ -1,6 +1,6 @@
 # 🧱 rune
 
-**rune** is a message scripting engine for infrared.
+**rune** is the message scripting engine for infrared.
 
 It parses a block of text, replaces variables, and turns it into an embed with optional buttons.  
 No GUI. No builder. Just script → message.
