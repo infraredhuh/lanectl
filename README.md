@@ -1,6 +1,6 @@
 # 🧱 rune
 
-**rune** is a message scripting engine for Discord bots.
+**rune** is a message scripting engine for infrared.
 
 It parses a block of text, replaces variables, and turns it into an embed with optional buttons.  
 No GUI. No builder. Just script → message.
@@ -72,17 +72,6 @@ async def rune(ctx, *, script: str):
 If the script defines nothing, `r.content`, `r.render()`, and `r.view()` all return `None`.
 
 ---
-
-## 📁 Project Structure
-
-```
-rune/
-├── engine.py     # core logic
-├── blocks.py     # component definitions
-├── inject.py     # variable replacements
-├── utils.py      # helpers
-├── __init__.py   # exposes Rune()
-```
 
 ---
 
