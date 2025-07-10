@@ -1,6 +1,6 @@
-# 🧱 rune
+# 🧱 lane
 
-**rune** is the embed scripting engine for infrared.
+**land** is the embed scripting engine for infrared.
 
 It parses a block of text, replaces variables, and turns it into an embed with an optional `discord.ui.View`.  
 No GUI. No builder. Just script → message.
@@ -56,7 +56,7 @@ Variables are replaced in any field.
 ## 🧪 Bot Usage
 
 ```py
-from rune import Rune
+from lane import Lane
 
 @bot.command()
 async def rune(ctx, *, script: str):
@@ -76,9 +76,9 @@ If the script defines nothing, `r.content`, `r.render()`, and `r.view()` all ret
 ## ⚙️ Install
 
 ```bash
-pip install rune
+pip install lane
 ```
 
-Or just copy the `rune/` folder into your project, i dont really care.
+Or just copy the `lane/` folder into your project, i dont really care.
 
 ---
