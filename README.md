@@ -76,7 +76,7 @@ If the script defines nothing, `r.content`, `r.render()`, and `r.view()` all ret
 ## ⚙️ Install
 
 ```bash
-pip install lane
+pip install lanectl
 ```
 
 Or just copy the `lanectl/` folder into your project, i dont really care.
