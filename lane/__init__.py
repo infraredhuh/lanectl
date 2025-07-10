@@ -1,3 +1,3 @@
-from .engine import Rune
+from .engine import Lane
 
-__all__ = ('Rune')
+__all__ = ('Lane')
