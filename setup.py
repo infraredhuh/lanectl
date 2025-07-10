@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 # we go dumm
 setup(
     name="lanectl",
-    version="0.2.0",
+    version="0.3.0",
     description="embed scripting engine by Infrared LLC.",
     author="infrared",
     author_email="faneorg.official@gmail.com",
