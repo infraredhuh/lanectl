@@ -1,6 +1,6 @@
-# 🧱 lane
+# 🧱 lanectl
 
-**lane** is the embed scripting engine for infrared.
+**lanectl** is the embed scripting engine for infrared.
 
 It parses a block of text, replaces variables, and turns it into an embed with an optional `discord.ui.View`.  
 No GUI. No builder. Just script → message.
@@ -56,7 +56,7 @@ Variables are replaced in any field.
 ## 🧪 Bot Usage
 
 ```py
-from lane import Lane
+from lanectl import Lane
 
 @bot.command()
 async def createembed(ctx, *, script: str):
@@ -79,6 +79,6 @@ If the script defines nothing, `r.content`, `r.render()`, and `r.view()` all ret
 pip install lane
 ```
 
-Or just copy the `lane/` folder into your project, i dont really care.
+Or just copy the `lanectl/` folder into your project, i dont really care.
 
 ---
