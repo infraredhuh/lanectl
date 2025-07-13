@@ -1,7 +1,7 @@
 import discord
 
-def inject_vars(text: str, member: discord.Member, target: discord.Member = None) -> str:
-    if not text:
+def inject_vars_partial(block_text: str, member: discord.Member, target: discord.Member = None) -> str:
+    if not block_text:
         return ""
 
     if target is None:
@@ -35,6 +35,6 @@ def inject_vars(text: str, member: discord.Member, target: discord.Member = None
     }
 
     for key, val in replacements.items():
-        text = text.replace(key, val or "")
+        block_text = block_text.replace(key, val or "")
 
-    return text
+    return block_text
