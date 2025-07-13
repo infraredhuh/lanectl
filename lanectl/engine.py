@@ -1,16 +1,19 @@
 import discord
-from typing import Optional, List
 import datetime
+from typing import Optional, List
 
 from .blocks import AuthorBlock, FieldBlock, FooterBlock, ButtonBlock
 from .inject import inject_vars
-from .utils import extract_blocks
+from .utils import extract_blocks  # Make sure this one is fixed (included below)
 
 class Lane:
     def __init__(self, script: str, member: discord.Member, target: Optional[discord.Member] = None):
         self.member = member
         self.target = target or member
+
+        print(">> Raw script:", repr(script))  # 🔍 DEBUG
         self.script = inject_vars(script, self.member, self.target)
+        print(">> Injected script:", repr(self.script))  # 🔍 DEBUG
 
         self.content = None
         self.title = None
@@ -28,7 +31,10 @@ class Lane:
 
     def _parse(self):
         blocks = extract_blocks(self.script)
+        print(">> Extracted blocks:", blocks)  # 🔍 DEBUG
+
         for raw in blocks:
+            print(">> Parsing block:", raw)  # 🔍 DEBUG
             if raw.startswith("content:"):
                 self.content = raw[8:].strip()
             elif raw.startswith("title:"):
@@ -93,3 +99,4 @@ class Lane:
                 disabled=b.disabled
             ))
         return view
+
